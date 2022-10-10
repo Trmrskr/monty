@@ -48,23 +48,27 @@ void file_line_processing(FILE *monty_file)
 		lline = strtok(line, "\n");
 		cmd = strtok(lline, " ");
 		if (cmd == NULL || cmd[0] == '\0')
+		{
+			line_no++;
 			continue;
+		}
 		if (strcmp(cmd, "push") == 0)
 		{
 			cmd_arg = strtok(NULL, " ");
 			num_value = set_number(cmd_arg, line_no);
 			push(&top, line_no);
 			(void) num_value;
+			line_no++;
 			continue;
 		}
 		func_ptr = get_func(cmd);
 		if (func_ptr == NULL)
-		{
-			fprintf(stderr, "L%d: Unknown instruction %s\n", line_no, cmd);
+		{	
+			fprintf(stderr, "L%d: unknown instruction %s\n",
+line_no, cmd);
 			exit(EXIT_FAILURE);
 		}
-		else
-			func_ptr(&top, line_no);
+		func_ptr(&top, line_no);
 		line_no++;
 	}
 	free_stack(top);

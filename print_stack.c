@@ -28,7 +28,7 @@ void print_stack_top(stack_t **top, unsigned int line_number)
 {
 	if (*top == NULL)
 	{
-		fprintf(stderr, "L%d: can't print, stack empty", line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", (*top)->n);
