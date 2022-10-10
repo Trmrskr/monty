@@ -1,11 +1,13 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 
 #define LINE_SIZE 1000000
+
 extern int num_value;
 
 typedef struct stack_s

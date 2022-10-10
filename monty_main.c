@@ -1,8 +1,8 @@
 #include "monty.h"
 
-int num_value;
 void file_line_processing(FILE *monty_file);
 
+int num_value = 0;
 /**
  * main - Entry point
  * @argc: number of arguments passed
