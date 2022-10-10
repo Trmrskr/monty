@@ -1,8 +1,8 @@
 #include "monty.h"
 
+int num_value;
 void file_line_processing(FILE *monty_file);
 
-int num_value = 0;
 /**
  * main - Entry point
  * @argc: number of arguments passed
@@ -52,9 +52,9 @@ void file_line_processing(FILE *monty_file)
 		if (strcmp(cmd, "push") == 0)
 		{
 			cmd_arg = strtok(NULL, " ");
-			check_number(cmd_arg, line_no);
-			num_value = atoi(cmd_arg);
+			num_value = set_number(cmd_arg, line_no);
 			push(&top, line_no);
+			(void) num_value;
 			continue;
 		}
 		func_ptr = get_func(cmd);

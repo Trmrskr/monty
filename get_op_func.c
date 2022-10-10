@@ -15,6 +15,7 @@ void (*get_func(char *cmd))()
 		{"pop", popout},
 		{"pall", print_stack},
 		{"pint", print_stack_top},
+		{"swap", swap},
 		{"nop", nop},
 		{NULL, NULL}
 	};
